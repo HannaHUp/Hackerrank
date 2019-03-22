@@ -1,0 +1,17 @@
+I use numpy in this question:
+
+import numpy as np
+# Complete the countingValleys function below.
+def countingValleys2(n, s):
+    lel=[]
+    vill=0
+    for step in s:
+        if step =="U":
+            lel.append(+1)
+        else:
+            lel.append(-1)
+    FIN=np.cumsum(lel)
+    for index,key in enumerate(FIN):
+        if key==-1 and FIN[index+1]==0:
+            vill+=1
+    return vill
