@@ -1,4 +1,4 @@
-I use numpy in this question:
+I first used numpy in this question:
 
 import numpy as np
 # Complete the countingValleys function below.
@@ -14,4 +14,17 @@ def countingValleys2(n, s):
     for index,key in enumerate(FIN):
         if key==-1 and FIN[index+1]==0:
             vill+=1
+    return vill
+
+after knowing cannot use numpy:
+def countingValleys(n, s):
+    level=0
+    vill=0
+    for step in s:
+        if step =="U":
+            if level==-1:
+                vill+=1
+            level+=1
+        else:
+            level-=1
     return vill
