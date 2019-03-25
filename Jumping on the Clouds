@@ -1,0 +1,35 @@
+First tried:
+def jumpingOnClouds(c):
+    count1 = c.count(1)
+    Indof0=[index for index, value in enumerate(c) if value == 0]
+    differenceof0=[]
+    for key,value in enumerate(Indof0):
+        if key !=0:
+            differenceof0.append(Indof0[key]-Indof0[key-1])    
+    seq=0
+    for key2,value2 in enumerate(differenceof0):
+        if key2 !=0:
+            if value2==differenceof0[key2-1]==1:
+                seq+=1
+    if (seq % 2) == 0:
+        jump=seq//2
+    else:
+        jump=(seq+1)//2
+    ministep=len(c)-1-jump-count1
+    return ministep
+#calculation of seqto jump is not really true
+
+
+last tried:
+def jumpingOnClouds(c):
+    current = 0
+    end = len(c)-1
+    jumps = 0
+    while current < end:
+        if ((current + 2) <= end) and (c[current + 2] == 0):
+            current += 2
+            jumps += 1
+        elif c[current + 1] == 0:
+            current += 1
+            jumps += 1
+    return jumps
