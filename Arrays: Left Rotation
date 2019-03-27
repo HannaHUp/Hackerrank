@@ -1,0 +1,3 @@
+def rotLeft(a, d):
+    new=a[d:]+a[:d]
+    return new
