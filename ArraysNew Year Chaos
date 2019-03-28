@@ -1,0 +1,20 @@
+def minimumBribes(q):
+    original={}
+    final={}
+    for index, value in enumerate(range(1,len(q)+1)):
+        original[value]=index
+    for index, value in enumerate(q):
+        final[value]=index
+    T=[]
+    Alert=0
+    for i in range(len(q)):
+        t=final[i+1]-original[i+1]
+        T.append(t)
+        if t >2:
+            Alert=1
+    TT=sum(map(abs, T))
+    if Alert==1:
+        R="Too chaotic"
+    else:
+        R=TT//2
+    return R
