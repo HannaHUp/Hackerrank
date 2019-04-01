@@ -1,0 +1,14 @@
+from collections import Counter
+def ransom_note(magazine, rasom):
+    return (Counter(rasom) - Counter(magazine)) == {}  
+def checkMagazine(magazine, note):
+    if ransom_note(magazine, note):
+        x=set(magazine)
+        y=set(note)
+        f=x & y
+        if f==y:
+            print('Yes')
+        else:
+            print('No')
+    else:
+        print('No')
