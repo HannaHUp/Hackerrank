@@ -1,0 +1,19 @@
+def countTriplets(arr, r):
+    m=list(itertools.combinations(arr,3))
+    count=0
+    for n in m:
+        if n[1]/n[0] == r and n[2]/n[1]==r:
+            count+=1
+            print(count)
+            
+            -----
+ def countTriplets(arr, r):
+    v2 = collections.defaultdict(int)
+    v3 = collections.defaultdict(int)
+    count = 0
+    for k in arr:
+        count += v3[k]
+        v3[k*r] += v2[k]
+        v2[k*r] += 1
+
+    return count
