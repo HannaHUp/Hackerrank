@@ -1,0 +1,12 @@
+def maximumToys(a, k):
+    a.sort()
+    s=0
+    snumber=0
+    for i in range(len(a)):
+        if a[0]>k:
+            return 0
+        if s+a[i]<=k:
+            s+=a[i]
+            snumber+=1
+
+    return snumber
